@@ -226,6 +226,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#example-get-exchnage-rate" class="md-nav__link">
+    Example get exchnage rate
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -296,6 +303,54 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          SEPA
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="SEPA" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          SEPA
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="SEPA/SEPA/" class="md-nav__link">
+        Request Body
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -332,6 +387,13 @@
         <li class="md-nav__item">
   <a href="#example-post" class="md-nav__link">
     Example post
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-get-exchnage-rate" class="md-nav__link">
+    Example get exchnage rate
   </a>
   
 </li>
@@ -375,6 +437,10 @@ PAYLOAD=&quot;GET|/api/v1/banks|$REQUEST&quot;
 signature=$(echo -n $PAYLOAD | openssl dgst -sha256 -hmac $API_SECRET  | sed -e 's/^.* //')
 
 curl -X GET &quot;$URL/$URI?$REQUEST&amp;signature=$signature&quot;
+
+</code></pre>
+<h2 id="example-get-exchnage-rate">Example get exchnage rate</h2>
+<pre><code>https://api.payments.test.alphafortress.com/get_conversion_rate?destination_currency=inr&amp;source_currency=usd&amp;source_amount=1&amp;api_token=$API_KEY&amp;recipient_country=in`
 
 </code></pre>
 
