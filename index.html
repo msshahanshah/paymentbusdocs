@@ -358,23 +358,24 @@ With the pace of development and adding new payment methoda and currencies we ha
 <h2 id="basics">Basics</h2>
 <p>All request made to the system need to be signed using <code>HmacSHA256</code> + tonce(epoch time) + SECRETKEY. This signature needs to be part of each request.<br />
 Please see the old swagger doc hosted here.<br />
-<a href="https://api.payments.alphafortress.com/documents/api_v1">https://api.payments.alphafortress.com/documents/api_v1</a></p>
+<a href="https://api.payments.test.alphafortress.com/documents/api_v1">https://api.payments.test.alphafortress.com/documents/api_v1</a></p>
 <h2 id="example-post">Example post</h2>
 <p>Below is a simpe bash script to get a list of banks from <code>INR</code></p>
 <pre><code>#!/bin/bash
 API_KEY=
 API_SECRET=
-URL=https://api.test.payments.alphafortress.com
-URI=api/v1/banks.json
+URL=https://api.payments.test.alphafortress.com
+URI=api/v1/banks
 TONCE=$(date +%s)000
 CURRENCY=inr 
 
 REQUEST=&quot;api_token=$API_KEY&amp;currency=$CURRENCY&amp;tonce=$TONCE&quot;
-PAYLOAD=&quot;GET|api/v1/banks.json|$REQUEST&quot;
+PAYLOAD=&quot;GET|/api/v1/banks|$REQUEST&quot;
 
 signature=$(echo -n $PAYLOAD | openssl dgst -sha256 -hmac $API_SECRET  | sed -e 's/^.* //')
 
-curl -s -X GET &quot;$URL/$URI?$REQUEST&amp;signature=$signature&quot;
+curl -X GET &quot;$URL/$URI?$REQUEST&amp;signature=$signature&quot;
+
 </code></pre>
 
               
