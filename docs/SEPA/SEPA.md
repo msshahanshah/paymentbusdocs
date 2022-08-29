@@ -1,0 +1,74 @@
+# Request Body 
+
+```
+"account_type=Bank" +
+    "&api_token=" +
+    process.env.API_TOKEN +
+    "&bank_name=" +
+    bankname +
+    "&bic_swift=" +
+    swift +
+    "&client_txn_id=" +
+    process.env.PAYMENT_BUS_TRANSACTION_SEQUENCE +transactiondetails.id +
+    "&destination_currency=eur" +
+    "&iban=" +
+    iban +
+    "&name=" +
+    benname +
+    "&recipient_address=" +
+    address +
+    "&recipient_city=" +
+    city +
+    "&recipient_city_of_birth=" +
+    city +
+    "&recipient_country=" +
+    recipient_country +
+    "&recipient_country_of_birth=" +
+    recipient_country +
+    "&recipient_country_sub_division=" +
+    state +
+    "&recipient_date_of_birth=1990-01-01" +
+    "&recipient_district=" +
+    state +
+    "&recipient_email=" +
+    benemail +
+    "&recipient_phone_number=" +
+    mobile +
+    "&recipient_postal_code=" +
+    postcode +
+    "&recipient_street=" +
+    street +
+    "&recipient_town_name=" +
+    city +
+    "&sender_address=" +
+    address +
+    "&sender_city=" +
+    city +
+    "&sender_country=" +
+    country +
+    "&sender_country_of_birth=" +
+    country +
+    "&sender_date_of_birth=1980-09-19" +
+    "&sender_email=" +
+    benemail +
+    "&sender_first_name=" +
+    first +
+    "&sender_gender=Male" +
+    "&sender_id_number=SecnderID09888" +
+    "&sender_last_name=" +
+    last +
+    "&sender_mobile_phone_country=" +
+    recipient_country +
+    "&sender_mobile_phone_number=" +
+    mobile +
+    "&sender_street=" +
+    street +
+    "&sender_type=Individual" +
+    "&sender_zipcode=" +
+    postcode +
+    "&source_amount=" +
+    sendrate.toFixed(8) +
+    "&source_currency=usd" +
+    "&tonce=" +
+    tonce;
+```
