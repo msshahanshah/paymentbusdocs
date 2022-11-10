@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.1">
     
     
       
@@ -17,7 +17,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.69437709.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.cbb835fc.min.css">
@@ -36,7 +36,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -233,6 +233,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#plan-diagram" class="md-nav__link">
+    Plan diagram
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -320,12 +327,60 @@
       
       
         <label class="md-nav__link" for="__nav_3">
+          NGN
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="NGN" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          NGN
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="NGN/ngn/" class="md-nav__link">
+        Request body for NGN
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
           SEPA
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SEPA" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           SEPA
         </label>
@@ -398,6 +453,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#plan-diagram" class="md-nav__link">
+    Plan diagram
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -423,7 +485,7 @@ Please see the old swagger doc hosted here.<br />
 <a href="https://api.payments.test.alphafortress.com/documents/api_v1">https://api.payments.test.alphafortress.com/documents/api_v1</a></p>
 <h2 id="example-post">Example post</h2>
 <p>Below is a simpe bash script to get a list of banks from <code>INR</code></p>
-<pre><code>#!/bin/bash
+<div class="highlight"><pre><span></span><code>#!/bin/bash
 API_KEY=
 API_SECRET=
 URL=https://api.payments.test.alphafortress.com
@@ -434,15 +496,23 @@ CURRENCY=inr
 REQUEST=&quot;api_token=$API_KEY&amp;currency=$CURRENCY&amp;tonce=$TONCE&quot;
 PAYLOAD=&quot;GET|/api/v1/banks|$REQUEST&quot;
 
-signature=$(echo -n $PAYLOAD | openssl dgst -sha256 -hmac $API_SECRET  | sed -e 's/^.* //')
+signature=$(echo -n $PAYLOAD | openssl dgst -sha256 -hmac $API_SECRET  | sed -e &#39;s/^.* //&#39;)
 
 curl -X GET &quot;$URL/$URI?$REQUEST&amp;signature=$signature&quot;
-
-</code></pre>
+</code></pre></div>
 <h2 id="example-get-exchnage-rate">Example get exchnage rate</h2>
-<pre><code>https://api.payments.test.alphafortress.com/get_conversion_rate?destination_currency=inr&amp;source_currency=usd&amp;source_amount=1&amp;api_token=$API_KEY&amp;recipient_country=in`
+<div class="highlight"><pre><span></span><code>https://api.payments.test.alphafortress.com/get_conversion_rate?destination_currency=inr&amp;source_currency=usd&amp;source_amount=1&amp;api_token=$API_KEY&amp;recipient_country=in`
+</code></pre></div>
+<h2 id="plan-diagram">Plan diagram</h2>
+<pre class="mermaid"><code>graph LR
+  A[Start] --&gt; B{Error?};
+  B --&gt;|Yes| C[Hmm...];
+  C --&gt; D[Debug];
+  D --&gt; B;
+  B ----&gt;|No| E[Yay!];</code></pre>
 
-</code></pre>
+
+
 
               
             </article>
@@ -495,10 +565,11 @@ curl -X GET &quot;$URL/$URI?$REQUEST&amp;signature=$signature&quot;
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      <script src="assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
     
   </body>
